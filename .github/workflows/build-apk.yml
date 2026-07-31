@@ -46,12 +46,13 @@ jobs:
           name: star-vanguard-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Create or Update Release
-        uses: softprops/action-gh-release@v2
+      - name: Create or Update Latest Release
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: latest
+          tag: latest
           name: Latest Build
-          files: android/app/build/outputs/apk/debug/app-debug.apk
-          generate_release_notes: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: android/app/build/outputs/apk/debug/app-debug.apk
+          allowUpdates: true
+          replacesArtifacts: true
+          generateReleaseNotes: true
+          token: ${{ secrets.GITHUB_TOKEN }}
