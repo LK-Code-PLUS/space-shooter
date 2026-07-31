@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  touch-action: none;
+}
+
+#game-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#gameCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #05050f;
+}
+
+#hud {
+  position: absolute;
+  top: env(safe-area-inset-top, 0px);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  color: #fff;
+  pointer-events: none;
+  z-index: 10;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0,200,255,0.8);
+}
+
+#scoreBox, #waveBox {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+#healthBar {
+  position: absolute;
+  top: env(safe-area-inset-top, 0px);
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 14px;
+  width: 140px;
+  height: 14px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(0,255,255,0.5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#healthFill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #00e5ff, #7cff00);
+  transition: width 0.2s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, rgba(20,20,60,0.9), rgba(0,0,5,0.97));
+  z-index: 20;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay h1 {
+  font-size: 42px;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+  color: #fff;
+  text-shadow: 0 0 20px #00e5ff, 0 0 40px #0077ff;
+}
+
+.overlay h1 span {
+  color: #ff2d75;
+  text-shadow: 0 0 20px #ff2d75, 0 0 40px #ff0055;
+}
+
+.overlay p {
+  font-size: 15px;
+  opacity: 0.85;
+  margin-bottom: 26px;
+}
+
+.overlay button {
+  padding: 14px 42px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #001018;
+  background: linear-gradient(135deg, #00e5ff, #7cff00);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(0,229,255,0.6);
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.overlay button:active {
+  transform: scale(0.95);
+}
+
+.hint {
+  margin-top: 22px;
+  font-size: 12px;
+  opacity: 0.6;
+  line-height: 1.8;
+}
+
+#pauseBtn {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,229,255,0.5);
+  background: rgba(0,20,30,0.6);
+  color: #00e5ff;
+  font-size: 18px;
+  z-index: 15;
+}
+
+#pauseBtn.hidden { display: none; }
