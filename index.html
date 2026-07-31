@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Star Vanguard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div id="scoreBox">Score: <span id="scoreVal">0</span></div>
+      <div id="waveBox">Wave <span id="waveVal">1</span></div>
+      <div id="healthBar"><div id="healthFill"></div></div>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="startScreen" class="overlay">
+      <h1>STAR <span>VANGUARD</span></h1>
+      <p>یک شوتر فضایی پر از انفجار و نور</p>
+      <button id="startBtn">شروع بازی</button>
+      <div class="hint">برای حرکت انگشتت رو روی صفحه بکش<br>شلیک خودکاره 🔥</div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="overlay hidden">
+      <h1>GAME <span>OVER</span></h1>
+      <p id="finalScore">امتیاز: 0</p>
+      <p id="bestScore">بهترین امتیاز: 0</p>
+      <button id="restartBtn">دوباره بازی کن</button>
+    </div>
+
+    <!-- Pause button -->
+    <button id="pauseBtn" class="hidden">⏸</button>
+    <div id="pauseScreen" class="overlay hidden">
+      <h1>مکث</h1>
+      <button id="resumeBtn">ادامه</button>
+    </div>
+  </div>
+
+<script src="game.js"></script>
+</body>
+</html>

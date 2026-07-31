@@ -1,0 +1,10 @@
+{
+  "appId": "com.starvanguard.game",
+  "appName": "Star Vanguard",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "backgroundColor": "#05050f",
+  "android": {
+    "backgroundColor": "#05050f"
+  }
+}
